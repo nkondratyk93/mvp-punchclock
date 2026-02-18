@@ -1,0 +1,27 @@
+# PunchClock
+
+> Free browser-based time clock for freelancers. Clock in, clock out, export to CSV. No signup, no account, no bloat.
+
+## What is PunchClock?
+
+PunchClock is a dead-simple time tracking tool for freelancers and solo workers. It runs entirely in your browser — no account needed, no data leaves your machine.
+
+## Features
+
+- One-click clock in / clock out
+- Live elapsed timer while working
+- Daily and weekly hours summary
+- Optional note per time entry
+- CSV export of all entries
+- All data stored in browser localStorage
+
+## Links
+
+- App: https://punchclock.visieasy.com/app
+- Home: https://punchclock.visieasy.com
+- Privacy: https://punchclock.visieasy.com/privacy
+- Terms: https://punchclock.visieasy.com/terms
+
+## Built by
+
+visieasy.com
