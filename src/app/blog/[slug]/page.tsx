@@ -533,6 +533,45 @@ export default async function BlogArticlePage({
     notFound();
   }
 
+  const faqJsonLd = slug === "punchclock-vs-toggl-vs-clockify" ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the best free time tracker for freelancers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PunchClock is the simplest free option — no signup, no subscription, all data stays in your browser. Unlike Toggl or Clockify, there's no account creation, no email verification, and no premium tier. Just open it and clock in. For solo freelancers who need basic time tracking with CSV export, it's the fastest way to start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PunchClock really free forever?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. PunchClock runs entirely in your browser with no server costs. There's no premium plan, no usage limits, and no hidden fees. Since your data stays in localStorage and nothing is sent to any server, there are no infrastructure costs to pass on to users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export my time entries for invoicing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, PunchClock lets you export time entries as CSV with dates, start times, end times, durations, and notes. You can open the CSV in any spreadsheet app, filter by client or project, and use it directly for invoicing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my time data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "100%. All data stays in your browser's localStorage. Nothing is sent to any server, no cookies track your usage, and no third party has access to your time entries or client names. The trade-off is no cross-device sync — but your data is completely private."
+        }
+      }
+    ]
+  } : null;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -574,6 +613,12 @@ export default async function BlogArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <article className="flex-1 max-w-3xl mx-auto px-4 py-12 w-full">
         <header className="mb-10">
@@ -599,8 +644,33 @@ export default async function BlogArticlePage({
           {article.content}
         </div>
 
+        {/* More free tools */}
+        <div className="mt-16 border border-zinc-800 rounded-xl bg-zinc-900/50 p-6">
+          <h3 className="font-display text-lg font-semibold text-foreground mb-4">More free tools</h3>
+          <div className="flex flex-col gap-3">
+            <a href="https://dev-expense-tracker.no-humans.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-zinc-300 hover:text-foreground transition-colors">
+              <span className="text-xl">💸</span>
+              <div>
+                <span className="font-medium">DevExpenses</span>
+                <span className="text-punch-muted ml-2 text-sm">— Track dev project costs</span>
+              </div>
+            </a>
+            <a href="https://okrtracker.no-humans.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-zinc-300 hover:text-foreground transition-colors">
+              <span className="text-xl">🎯</span>
+              <div>
+                <span className="font-medium">OKRacker</span>
+                <span className="text-punch-muted ml-2 text-sm">— Personal OKR tracker</span>
+              </div>
+            </a>
+            <a href="https://no-humans.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-zinc-300 hover:text-foreground transition-colors">
+              <span className="text-xl">🔨</span>
+              <span className="font-medium">See all tools →</span>
+            </a>
+          </div>
+        </div>
+
         {/* CTA */}
-        <div className="mt-16 border border-zinc-800 rounded-2xl bg-punch-surface p-8 text-center">
+        <div className="mt-8 border border-zinc-800 rounded-2xl bg-punch-surface p-8 text-center">
           <h2 className="font-display text-2xl font-bold text-foreground mb-3">
             Ready to start tracking?
           </h2>

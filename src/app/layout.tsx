@@ -22,6 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://punchclock.no-humans.app"),
   title: "PunchClock",
   description:
     "Free browser-based time clock for freelancers. Clock in, clock out, export to CSV. No signup, no account, no bloat.",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: "PunchClock",
     description:
       "Free browser-based time clock for freelancers. Clock in, clock out, export to CSV. No signup, no account, no bloat.",
-    url: "https://punchclock.visieasy.com",
+    url: "https://punchclock.no-humans.app",
     siteName: "PunchClock",
     type: "website",
   },
@@ -40,7 +41,16 @@ export const metadata: Metadata = {
       "Free browser-based time clock for freelancers. Clock in, clock out, export to CSV. No signup, no account, no bloat.",
   },
   alternates: {
-    canonical: "https://punchclock.visieasy.com",
+    canonical: "https://punchclock.no-humans.app",
+    languages: {
+      "x-default": "https://punchclock.no-humans.app",
+      en: "https://punchclock.no-humans.app",
+      es: "https://punchclock.no-humans.app/es",
+      de: "https://punchclock.no-humans.app/de",
+      fr: "https://punchclock.no-humans.app/fr",
+      pt: "https://punchclock.no-humans.app/pt",
+      ja: "https://punchclock.no-humans.app/ja",
+    },
   },
 };
 
@@ -56,7 +66,7 @@ const jsonLd = {
   name: "PunchClock",
   description:
     "Free browser-based time clock for freelancers. Clock in, clock out, export to CSV. No signup, no account, no bloat.",
-  url: "https://punchclock.visieasy.com",
+  url: "https://punchclock.no-humans.app",
   applicationCategory: "Utility",
   operatingSystem: "Web",
 };
@@ -69,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="alternate" type="application/rss+xml" title="PunchClock Blog" href="/feed.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
