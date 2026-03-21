@@ -19,8 +19,15 @@ PunchClock is a dead-simple time tracking tool for freelancers and solo workers.
 
 - App: https://punchclock.visieasy.com/app
 - Home: https://punchclock.visieasy.com
+- Blog: https://punchclock.visieasy.com/blog
 - Privacy: https://punchclock.visieasy.com/privacy
 - Terms: https://punchclock.visieasy.com/terms
+
+## Blog
+
+- How to Track Freelance Hours Without Expensive Apps (2025): https://punchclock.visieasy.com/blog/how-to-track-freelance-hours-without-apps
+- How to Invoice Clients with Accurate Time Tracking: https://punchclock.visieasy.com/blog/how-to-invoice-clients-accurate-time-tracking
+- PunchClock vs Toggl vs Clockify: https://punchclock.visieasy.com/blog/punchclock-vs-toggl-vs-clockify
 
 ## Built by
 
